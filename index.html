@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WCTA Cyber — Tool Library</title>
+<meta name="description" content="Certification exam prep tool library for WCTA Cyber students.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-0:#050810;
+  --bg-1:#0a1220;
+  --cyan:#4fd8ff;
+  --blue:#2b6fff;
+  --amber:#ffb454;
+  --text:#dbe7f4;
+  --text-dim:#8aa2bd;
+  --glass:rgba(16,28,48,0.42);
+  --glass-border:rgba(79,216,255,0.22);
+  --glass-border-hot:rgba(79,216,255,0.65);
+  --radius:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg-0);
+  color:var(--text);
+  font-family:'Saira',sans-serif;
+  font-weight:300;
+  overflow-x:hidden;
+  min-height:100vh;
+}
+/* CSS fallback background (visible when WebGL is off / reduced motion) */
+body::before{
+  content:"";
+  position:fixed;inset:0;z-index:-2;
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 10%, rgba(43,111,255,0.16), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 15% 80%, rgba(79,216,255,0.09), transparent 60%),
+    linear-gradient(160deg, var(--bg-0), var(--bg-1) 60%, #070c18);
+}
+#scene{
+  position:fixed;inset:0;z-index:-1;display:block;
+  opacity:0;transition:opacity 1.6s ease;
+}
+#scene.live{opacity:1}
+
+::selection{background:rgba(79,216,255,0.3)}
+
+a{color:var(--cyan)}
+h1,h2,h3,.display{font-family:'Chakra Petch',sans-serif}
+
+/* ---------- Header ---------- */
+header{
+  position:sticky;top:0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px clamp(18px,4vw,48px);
+  background:rgba(5,8,16,0.55);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(79,216,255,0.12);
+}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text)}
+.brand-mark{
+  width:34px;height:34px;flex:none;
+  border:1.5px solid var(--cyan);
+  border-radius:8px;
+  display:grid;place-items:center;
+  font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:13px;
+  color:var(--cyan);
+  box-shadow:0 0 14px rgba(79,216,255,0.35), inset 0 0 10px rgba(79,216,255,0.12);
+}
+.brand-name{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:15px;letter-spacing:0.14em;text-transform:uppercase}
+.brand-sub{display:block;font-family:'Saira',sans-serif;font-weight:400;font-size:11px;letter-spacing:0.22em;color:var(--text-dim);text-transform:uppercase}
+.status{
+  display:flex;align-items:center;gap:8px;
+  font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:0.2em;
+  color:var(--cyan);text-transform:uppercase;
+}
+.status-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--cyan);
+  box-shadow:0 0 10px var(--cyan);
+  animation:pulse 2.4s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.35}}
+
+/* ---------- Hero ---------- */
+.hero{
+  min-height:52vh;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(48px,9vh,110px) clamp(18px,4vw,48px) clamp(30px,5vh,60px);
+  max-width:1200px;margin:0 auto;width:100%;
+}
+.eyebrow{
+  font-family:'Chakra Petch',sans-serif;
+  font-size:12px;letter-spacing:0.34em;text-transform:uppercase;
+  color:var(--amber);
+  margin-bottom:18px;
+}
+.hero h1{
+  font-size:clamp(2.1rem,5.6vw,4.2rem);
+  font-weight:700;line-height:1.05;
+  letter-spacing:0.01em;
+  text-transform:uppercase;
+}
+.hero h1 .thin{font-weight:400;color:var(--cyan)}
+.hero p{
+  margin-top:20px;max-width:560px;
+  font-size:clamp(1rem,1.6vw,1.15rem);
+  color:var(--text-dim);line-height:1.65;
+}
+.hero-meta{
+  margin-top:34px;display:flex;gap:28px;flex-wrap:wrap;
+  font-family:'Chakra Petch',sans-serif;font-size:12px;letter-spacing:0.18em;
+  text-transform:uppercase;color:var(--text-dim);
+}
+.hero-meta b{color:var(--cyan);font-weight:600;margin-right:6px}
+
+/* ---------- Toolbar (search) ---------- */
+.toolbar{
+  position:sticky;top:63px;z-index:40;
+  max-width:1200px;margin:0 auto;width:100%;
+  padding:0 clamp(18px,4vw,48px) 18px;
+}
+.search-wrap{
+  display:flex;align-items:center;gap:12px;
+  background:var(--glass);
+  border:1px solid var(--glass-border);
+  border-radius:var(--radius);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  padding:12px 18px;
+  box-shadow:0 8px 30px rgba(0,0,0,0.35);
+  transition:border-color .25s ease, box-shadow .25s ease;
+}
+.search-wrap:focus-within{
+  border-color:var(--glass-border-hot);
+  box-shadow:0 8px 30px rgba(0,0,0,0.35), 0 0 22px rgba(79,216,255,0.18);
+}
+.search-wrap svg{flex:none;opacity:0.7}
+#search{
+  flex:1;background:none;border:none;outline:none;
+  color:var(--text);font-family:'Saira',sans-serif;font-size:15px;font-weight:400;
+}
+#search::placeholder{color:var(--text-dim)}
+kbd{
+  font-family:'Chakra Petch',sans-serif;font-size:10px;letter-spacing:0.1em;
+  border:1px solid rgba(79,216,255,0.3);border-radius:5px;
+  padding:2px 7px;color:var(--text-dim);
+}
+#result-count{
+  font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:0.16em;
+  color:var(--text-dim);text-transform:uppercase;white-space:nowrap;
+}
+
+/* ---------- Grid ---------- */
+main{max-width:1200px;margin:0 auto;width:100%;padding:6px clamp(18px,4vw,48px) 70px}
+.category{margin-top:34px}
+.category-head{
+  display:flex;align-items:baseline;gap:14px;margin-bottom:16px;
+}
+.category-head h2{
+  font-size:clamp(1.05rem,2vw,1.3rem);font-weight:600;
+  letter-spacing:0.12em;text-transform:uppercase;
+}
+.category-head .count{
+  font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:0.14em;
+  color:var(--amber);
+}
+.category-head .rule{
+  flex:1;height:1px;
+  background:linear-gradient(90deg, rgba(79,216,255,0.35), transparent);
+}
+.grid{
+  display:grid;gap:16px;
+  grid-template-columns:repeat(auto-fill, minmax(260px, 1fr));
+}
+.card{
+  position:relative;
+  display:flex;flex-direction:column;gap:10px;
+  background:var(--glass);
+  border:1px solid var(--glass-border);
+  border-radius:var(--radius);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  padding:20px 20px 18px;
+  text-decoration:none;color:var(--text);
+  transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+  overflow:hidden;
+}
+.card::after{ /* corner tick, HUD detail */
+  content:"";position:absolute;top:0;right:0;width:26px;height:26px;
+  border-top:2px solid rgba(79,216,255,0.4);
+  border-right:2px solid rgba(79,216,255,0.4);
+  border-radius:0 var(--radius) 0 0;
+  transition:border-color .25s ease;
+}
+.card:hover, .card:focus-visible{
+  transform:translateY(-4px);
+  border-color:var(--glass-border-hot);
+  box-shadow:0 14px 40px rgba(0,0,0,0.45), 0 0 26px rgba(79,216,255,0.14);
+  outline:none;
+}
+.card:hover::after, .card:focus-visible::after{border-color:var(--cyan)}
+.card:focus-visible{box-shadow:0 0 0 2px var(--cyan), 0 14px 40px rgba(0,0,0,0.45)}
+.card h3{
+  font-size:1.02rem;font-weight:600;letter-spacing:0.03em;line-height:1.3;
+  padding-right:22px;
+}
+.card p{font-size:0.9rem;color:var(--text-dim);line-height:1.55;flex:1}
+.card-foot{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-top:4px;
+}
+.tag{
+  font-family:'Chakra Petch',sans-serif;font-size:10px;font-weight:500;
+  letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--cyan);
+  border:1px solid rgba(79,216,255,0.28);
+  border-radius:999px;padding:4px 11px;
+}
+.launch{
+  font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:0.14em;
+  color:var(--text-dim);text-transform:uppercase;
+  transition:color .2s ease;
+}
+.card:hover .launch{color:var(--amber)}
+
+/* ---------- Empty / error states ---------- */
+.notice{
+  max-width:640px;margin:60px auto;
+  background:var(--glass);
+  border:1px solid rgba(255,180,84,0.4);
+  border-radius:var(--radius);
+  backdrop-filter:blur(16px);
+  padding:26px 30px;text-align:center;
+}
+.notice h3{color:var(--amber);letter-spacing:0.1em;text-transform:uppercase;font-size:1rem;margin-bottom:10px}
+.notice p{color:var(--text-dim);font-size:0.95rem;line-height:1.6}
+.hidden{display:none !important}
+
+/* ---------- Footer ---------- */
+footer{
+  border-top:1px solid rgba(79,216,255,0.1);
+  padding:30px clamp(18px,4vw,48px);
+  display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
+  max-width:1200px;margin:0 auto;width:100%;
+  font-size:0.85rem;color:var(--text-dim);
+}
+footer a{text-decoration:none;letter-spacing:0.06em}
+footer a:hover{color:var(--amber)}
+#updated{font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:0.16em;text-transform:uppercase}
+
+/* ---------- Reveal animation ---------- */
+.category{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease}
+.category.in{opacity:1;transform:none}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+  .category{opacity:1;transform:none}
+}
+@media (max-width:640px){
+  .status span{display:none}
+  .toolbar{top:59px}
+  kbd{display:none}
+}
+</style>
+</head>
+<body>
+
+<canvas id="scene" aria-hidden="true"></canvas>
+
+<header>
+  <a class="brand" href="https://wctacyber.org">
+    <span class="brand-mark">W/C</span>
+    <span>
+      <span class="brand-name">WCTA Cyber</span>
+      <span class="brand-sub">Tool Library</span>
+    </span>
+  </a>
+  <div class="status" role="status"><span class="status-dot"></span><span>Systems&nbsp;Online</span></div>
+</header>
+
+<section class="hero">
+  <div class="eyebrow">Certification Exam Prep</div>
+  <h1>Train Here.<br><span class="thin">Certify Anywhere.</span></h1>
+  <p>Interactive simulators, sandboxes, and study tools built for WCTA Cyber students — everything you need to drill Network+, Security+, and competition skills, in one place.</p>
+  <div class="hero-meta">
+    <span><b id="stat-tools">—</b>Tools</span>
+    <span><b id="stat-cats">—</b>Categories</span>
+    <span><b>Free</b>Always</span>
+  </div>
+</section>
+
+<div class="toolbar">
+  <div class="search-wrap">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#4fd8ff" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+    <input id="search" type="search" placeholder="Search tools, topics, categories…" autocomplete="off" aria-label="Search tools">
+    <kbd>/</kbd>
+    <span id="result-count"></span>
+  </div>
+</div>
+
+<main>
+  <div id="tool-groups"></div>
+  <div id="empty" class="notice hidden">
+    <h3>No matches</h3>
+    <p>Nothing in the library matches that search. Try a broader term — or ask Mr. Speciale to add the tool you're looking for.</p>
+  </div>
+  <div id="load-error" class="notice hidden">
+    <h3>Library unavailable</h3>
+    <p>The tool list (<code>links.json</code>) couldn't be loaded. If you're viewing this file directly from disk, serve it over http(s) instead. Otherwise, check that <code>links.json</code> sits next to <code>index.html</code>.</p>
+  </div>
+</main>
+
+<footer>
+  <span>© WCTA Cybersecurity · <a href="https://wctacyber.org">wctacyber.org</a></span>
+  <span id="updated"></span>
+</footer>
+
+<script>
+/* ============ Data: fetch + render ============ */
+const groupsEl = document.getElementById('tool-groups');
+const emptyEl = document.getElementById('empty');
+const errEl = document.getElementById('load-error');
+const searchEl = document.getElementById('search');
+const countEl = document.getElementById('result-count');
+let TOOLS = [];
+
+function esc(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML;}
+
+function render(list){
+  groupsEl.innerHTML = '';
+  const cats = [...new Set(list.map(t=>t.category))];
+  for(const cat of cats){
+    const items = list.filter(t=>t.category===cat);
+    const sec = document.createElement('section');
+    sec.className = 'category in';
+    sec.innerHTML = `
+      <div class="category-head">
+        <h2>${esc(cat)}</h2>
+        <span class="count">${items.length} tool${items.length!==1?'s':''}</span>
+        <span class="rule"></span>
+      </div>
+      <div class="grid">
+        ${items.map(t=>`
+          <a class="card" href="${esc(t.url)}" target="_blank" rel="noopener noreferrer">
+            <h3>${esc(t.name)}</h3>
+            <p>${esc(t.description)}</p>
+            <div class="card-foot">
+              <span class="tag">${esc(t.category)}</span>
+              <span class="launch">Launch →</span>
+            </div>
+          </a>`).join('')}
+      </div>`;
+    groupsEl.appendChild(sec);
+  }
+  emptyEl.classList.toggle('hidden', list.length>0);
+  countEl.textContent = searchEl.value.trim() ? `${list.length} / ${TOOLS.length}` : '';
+}
+
+function applyFilter(){
+  const q = searchEl.value.trim().toLowerCase();
+  if(!q){ render(TOOLS); return; }
+  render(TOOLS.filter(t =>
+    t.name.toLowerCase().includes(q) ||
+    t.category.toLowerCase().includes(q) ||
+    t.description.toLowerCase().includes(q)));
+}
+searchEl.addEventListener('input', applyFilter);
+document.addEventListener('keydown', e=>{
+  if(e.key==='/' && document.activeElement!==searchEl){ e.preventDefault(); searchEl.focus(); }
+  if(e.key==='Escape' && document.activeElement===searchEl){ searchEl.value=''; applyFilter(); searchEl.blur(); }
+});
+
+fetch('links.json')
+  .then(r=>{ if(!r.ok) throw new Error(r.status); return r.json(); })
+  .then(data=>{
+    TOOLS = (data.tools||[]).filter(t=>t && t.name && t.url);
+    document.getElementById('stat-tools').textContent = TOOLS.length;
+    document.getElementById('stat-cats').textContent = new Set(TOOLS.map(t=>t.category)).size;
+    if(data.updated) document.getElementById('updated').textContent = 'Updated ' + data.updated;
+    render(TOOLS);
+  })
+  .catch(err=>{ console.warn('links.json load failed:', err); errEl.classList.remove('hidden'); });
+</script>
+
+<script type="module">
+/* ============ 3D network constellation (Three.js) ============ */
+const prefersReduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const canvas = document.getElementById('scene');
+
+function webglOK(){
+  try{ const c=document.createElement('canvas');
+    return !!(window.WebGLRenderingContext && (c.getContext('webgl2')||c.getContext('webgl'))); }
+  catch(e){ return false; }
+}
+
+if(!prefersReduced && webglOK()){
+  try{
+    const THREE = await import('https://unpkg.com/three@0.184.0/build/three.module.js');
+
+    const small = matchMedia('(max-width: 768px)').matches;
+    const NODE_COUNT = small ? 60 : 140;
+    const LINK_DIST = small ? 7 : 8.5;
+
+    const renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true});
+    renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+    renderer.setSize(innerWidth, innerHeight);
+
+    const scene = new THREE.Scene();
+    scene.fog = new THREE.FogExp2(0x050810, 0.028);
+    const camera = new THREE.PerspectiveCamera(60, innerWidth/innerHeight, 0.1, 200);
+    camera.position.set(0, 0, 26);
+
+    /* Node particle field */
+    const nodes = [];
+    const spread = 46;
+    for(let i=0;i<NODE_COUNT;i++){
+      nodes.push({
+        pos:new THREE.Vector3((Math.random()-0.5)*spread,(Math.random()-0.5)*spread*0.6,(Math.random()-0.5)*spread*0.6),
+        vel:new THREE.Vector3((Math.random()-0.5)*0.012,(Math.random()-0.5)*0.012,(Math.random()-0.5)*0.012)
+      });
+    }
+    const nodeGeo = new THREE.BufferGeometry();
+    const nodePos = new Float32Array(NODE_COUNT*3);
+    nodeGeo.setAttribute('position', new THREE.BufferAttribute(nodePos,3));
+    const nodeMat = new THREE.PointsMaterial({color:0x4fd8ff, size:0.22, transparent:true, opacity:0.9, sizeAttenuation:true});
+    scene.add(new THREE.Points(nodeGeo, nodeMat));
+
+    /* Link lines (rebuilt each frame from proximity) */
+    const MAX_LINKS = NODE_COUNT*4;
+    const lineGeo = new THREE.BufferGeometry();
+    const linePos = new Float32Array(MAX_LINKS*6);
+    lineGeo.setAttribute('position', new THREE.BufferAttribute(linePos,3));
+    const lineMat = new THREE.LineBasicMaterial({color:0x2b6fff, transparent:true, opacity:0.28});
+    const lines = new THREE.LineSegments(lineGeo, lineMat);
+    scene.add(lines);
+
+    /* Wireframe icosahedron core */
+    const core = new THREE.Mesh(
+      new THREE.IcosahedronGeometry(5.2, 1),
+      new THREE.MeshBasicMaterial({color:0x4fd8ff, wireframe:true, transparent:true, opacity:0.16})
+    );
+    const coreInner = new THREE.Mesh(
+      new THREE.IcosahedronGeometry(2.6, 0),
+      new THREE.MeshBasicMaterial({color:0xffb454, wireframe:true, transparent:true, opacity:0.22})
+    );
+    core.position.x = small ? 0 : 10;
+    coreInner.position.copy(core.position);
+    scene.add(core, coreInner);
+
+    /* Mouse parallax + scroll drift */
+    let mx=0, my=0, tx=0, ty=0;
+    addEventListener('pointermove', e=>{
+      tx = (e.clientX/innerWidth - 0.5);
+      ty = (e.clientY/innerHeight - 0.5);
+    }, {passive:true});
+
+    addEventListener('resize', ()=>{
+      camera.aspect = innerWidth/innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(innerWidth, innerHeight);
+    });
+
+    const clock = new THREE.Clock();
+    let visible = true;
+    document.addEventListener('visibilitychange', ()=>{ visible = !document.hidden; });
+
+    function tick(){
+      requestAnimationFrame(tick);
+      if(!visible) return;
+      const dt = Math.min(clock.getDelta(), 0.05);
+      const t = clock.elapsedTime;
+
+      /* drift nodes + wrap */
+      for(let i=0;i<NODE_COUNT;i++){
+        const n = nodes[i];
+        n.pos.addScaledVector(n.vel, dt*60);
+        if(Math.abs(n.pos.x)>spread/2) n.vel.x*=-1;
+        if(Math.abs(n.pos.y)>spread*0.3) n.vel.y*=-1;
+        if(Math.abs(n.pos.z)>spread*0.3) n.vel.z*=-1;
+        nodePos[i*3]=n.pos.x; nodePos[i*3+1]=n.pos.y; nodePos[i*3+2]=n.pos.z;
+      }
+      nodeGeo.attributes.position.needsUpdate = true;
+
+      /* proximity links */
+      let li=0;
+      for(let i=0;i<NODE_COUNT && li<MAX_LINKS;i++){
+        for(let j=i+1;j<NODE_COUNT && li<MAX_LINKS;j++){
+          if(nodes[i].pos.distanceToSquared(nodes[j].pos) < LINK_DIST*LINK_DIST){
+            linePos.set([nodes[i].pos.x,nodes[i].pos.y,nodes[i].pos.z,
+                         nodes[j].pos.x,nodes[j].pos.y,nodes[j].pos.z], li*6);
+            li++;
+          }
+        }
+      }
+      lineGeo.setDrawRange(0, li*2);
+      lineGeo.attributes.position.needsUpdate = true;
+
+      core.rotation.y = t*0.12; core.rotation.x = t*0.05;
+      coreInner.rotation.y = -t*0.2; coreInner.rotation.z = t*0.1;
+
+      /* camera parallax: mouse + scroll */
+      mx += (tx-mx)*0.04; my += (ty-my)*0.04;
+      const scroll = scrollY*0.004;
+      camera.position.x = mx*4;
+      camera.position.y = -my*3 - scroll;
+      camera.lookAt(small?0:5, -scroll*0.5, 0);
+
+      renderer.render(scene, camera);
+    }
+    tick();
+    canvas.classList.add('live');
+  }catch(err){
+    console.warn('3D scene unavailable, CSS fallback active:', err);
+  }
+}
+/* If reduced-motion or no WebGL: canvas stays hidden; CSS gradient background shows. */
+</script>
+
+<script>
+/* Scroll reveal for categories (skipped under reduced motion via CSS) */
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
+},{threshold:0.08});
+new MutationObserver(()=>{
+  document.querySelectorAll('.category:not(.observed)').forEach(el=>{
+    el.classList.add('observed'); el.classList.remove('in'); io.observe(el);
+  });
+}).observe(document.getElementById('tool-groups'), {childList:true});
+</script>
+
+</body>
+</html>

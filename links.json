@@ -1,0 +1,18 @@
+{
+  "_comment": "WCTA Cyber tool library data. Edit this file to add/remove tools - no code changes needed. Each tool needs: category, name, url, description. Categories repeat freely; the page groups them automatically.",
+  "updated": "2026-07-15",
+  "tools": [
+    { "category": "Network+", "name": "OSI Model Explorer", "url": "https://osi-model-explorer.vercel.app/", "description": "An interactive OSI Model exploration app" },
+    { "category": "Network+", "name": "Ports and Protocols", "url": "https://ports-protocols-explorer.vercel.app/", "description": "An interactive Ports and Protocols exploration app" },
+    { "category": "Network+", "name": "IP & Subnet Explorer", "url": "https://ip-address-subnet-explorer.vercel.app/", "description": "An IP v4 Address and Subnet interactive dashboard" },
+    { "category": "Network+", "name": "TCP/UDP Race Simulator", "url": "https://tcp-udp-simulator.vercel.app/", "description": "A simulation showing the differences between both protocols" },
+    { "category": "Network+", "name": "Network Topology Builder", "url": "https://network-topology-builder.vercel.app/", "description": "A walkthrough of the various network topologies" },
+    { "category": "Network+", "name": "Wireless Channel Visualizer", "url": "https://wireless-channel-simulator.vercel.app/", "description": "A wireless channel simulator" },
+    { "category": "Network+", "name": "Network Diagram Decoder", "url": "https://network-diagram-decoder-39np.vercel.app/", "description": "A network diagram simulator and decoder" },
+    { "category": "Network+", "name": "DNS Lookup Simulator", "url": "https://dns-resolver-six.vercel.app/", "description": "A DNS lookup simulator" },
+    { "category": "Network+", "name": "Attack Type Identifier", "url": "https://attack-type.vercel.app/", "description": "Defines and helps identify different types of cyber attacks" },
+    { "category": "Network+", "name": "Firewall ACL Builder", "url": "https://firewall-acl-builder.vercel.app/", "description": "An interactive walkthrough on setting up firewall access control lists" },
+    { "category": "Network+", "name": "Encryption Explorer", "url": "https://encryption-explorer.vercel.app/", "description": "A reference and simulation of different types of encryption" },
+    { "category": "Network+", "name": "CLI Command Sandbox", "url": "https://cli-sandbox.vercel.app/", "description": "Test and quiz on CLI network commands, both Linux and Windows" }
+  ]
+}
