@@ -1,18 +1,20 @@
 {
-  "_comment": "WCTA Cyber tool library data. Edit this file to add/remove tools - no code changes needed. Each tool needs: category, name, url, description. Categories repeat freely; the page groups them automatically.",
-  "updated": "2026-07-15",
+  "_comment": "WCTA Cyber tool library data. Edit THIS FILE to add/remove tools or categories - no code changes needed. Each tool needs: category, name, url, description. Categories repeat freely; the page groups them automatically, assigns each a colour, and builds the filter buttons, boot-log mount lines, headings, counts and search index from whatever it finds here. Category display order follows the order tools first appear below.",
+  "updated": "2026-07-29",
   "tools": [
-    { "category": "Network+", "name": "OSI Model Explorer", "url": "https://osi-model-explorer.vercel.app/", "description": "An interactive OSI Model exploration app" },
-    { "category": "Network+", "name": "Ports and Protocols", "url": "https://ports-protocols-explorer.vercel.app/", "description": "An interactive Ports and Protocols exploration app" },
-    { "category": "Network+", "name": "IP & Subnet Explorer", "url": "https://ip-address-subnet-explorer.vercel.app/", "description": "An IP v4 Address and Subnet interactive dashboard" },
-    { "category": "Network+", "name": "TCP/UDP Race Simulator", "url": "https://tcp-udp-simulator.vercel.app/", "description": "A simulation showing the differences between both protocols" },
-    { "category": "Network+", "name": "Network Topology Builder", "url": "https://network-topology-builder.vercel.app/", "description": "A walkthrough of the various network topologies" },
-    { "category": "Network+", "name": "Wireless Channel Visualizer", "url": "https://wireless-channel-simulator.vercel.app/", "description": "A wireless channel simulator" },
-    { "category": "Network+", "name": "Network Diagram Decoder", "url": "https://network-diagram-decoder-39np.vercel.app/", "description": "A network diagram simulator and decoder" },
-    { "category": "Network+", "name": "DNS Lookup Simulator", "url": "https://dns-resolver-six.vercel.app/", "description": "A DNS lookup simulator" },
-    { "category": "Network+", "name": "Attack Type Identifier", "url": "https://attack-type.vercel.app/", "description": "Defines and helps identify different types of cyber attacks" },
-    { "category": "Network+", "name": "Firewall ACL Builder", "url": "https://firewall-acl-builder.vercel.app/", "description": "An interactive walkthrough on setting up firewall access control lists" },
-    { "category": "Network+", "name": "Encryption Explorer", "url": "https://encryption-explorer.vercel.app/", "description": "A reference and simulation of different types of encryption" },
-    { "category": "Network+", "name": "CLI Command Sandbox", "url": "https://cli-sandbox.vercel.app/", "description": "Test and quiz on CLI network commands, both Linux and Windows" }
+    { "category": "Network+", "name": "OSI Model Explorer", "url": "https://osi-model-explorer.vercel.app/", "description": "Click through all seven layers - protocols, devices, and PDUs at each one." },
+    { "category": "Network+", "name": "Ports & Protocols Explorer", "url": "https://ports-protocols-explorer.vercel.app/", "description": "Look up well-known ports and the protocols that ride on them." },
+    { "category": "Network+", "name": "IP Address and Subnets", "url": "https://ip-address-subnet-explorer.vercel.app/", "description": "IPv4 addressing and subnet math on an interactive dashboard." },
+    { "category": "Network+", "name": "TCP/UDP Simulator", "url": "https://tcp-udp-simulator.vercel.app/", "description": "Race the two protocols side by side to see how they differ." },
+    { "category": "Network+", "name": "Network Topology Builder", "url": "https://network-topology-builder.vercel.app/", "description": "Build and compare star, mesh, bus, and ring topologies." },
+    { "category": "Network+", "name": "Wireless Channel Simulator", "url": "https://wireless-channel-simulator.vercel.app/", "description": "See how 2.4 and 5 GHz channels overlap and interfere." },
+    { "category": "Network+", "name": "DNS Resolver", "url": "https://dns-resolver-six.vercel.app/", "description": "Follow a DNS query from resolver to root to authoritative answer." },
+    { "category": "Network+", "name": "Command Line Sandbox", "url": "https://cli-sandbox.vercel.app/", "description": "Practice and quiz on network CLI commands - Linux and Windows." },
+
+    { "category": "Security+", "name": "Firewall ACL Builder", "url": "https://firewall-acl-builder.vercel.app/", "description": "Write and order firewall access control rules, then test traffic against them." },
+    { "category": "Security+", "name": "Encryption Explorer", "url": "https://encryption-explorer.vercel.app/", "description": "Compare symmetric, asymmetric, and hashing with worked examples." },
+    { "category": "Security+", "name": "Security+ Practice Exam", "url": "https://sec-plus-beryl.vercel.app/", "description": "Timed practice questions across all five SY0-701 domains." },
+
+    { "category": "Both", "name": "Attack Types", "url": "https://attack-type.vercel.app/", "description": "Identify and define the major categories of cyber attack." }
   ]
 }
