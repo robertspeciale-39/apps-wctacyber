@@ -10,6 +10,8 @@
     { "category": "Network+", "name": "Wireless Channel Simulator", "url": "https://wireless-channel-simulator.vercel.app/", "description": "See how 2.4 and 5 GHz channels overlap and interfere." },
     { "category": "Network+", "name": "DNS Resolver", "url": "https://dns-resolver-six.vercel.app/", "description": "Follow a DNS query from resolver to root to authoritative answer." },
     { "category": "Network+", "name": "Command Line Sandbox", "url": "https://cli-sandbox.vercel.app/", "description": "Practice and quiz on network CLI commands - Linux and Windows." },
+    { "category": "Network+", "name": "Packet Flow Tracer", "url": "https://packet-flow-theta.vercel.app/", "description": "Network simulation on how networks transfer data and what happens when they break" },
+    
 
     { "category": "Security+", "name": "Firewall ACL Builder", "url": "https://firewall-acl-builder.vercel.app/", "description": "Write and order firewall access control rules, then test traffic against them." },
     { "category": "Security+", "name": "Encryption Explorer", "url": "https://encryption-explorer.vercel.app/", "description": "Compare symmetric, asymmetric, and hashing with worked examples." },
