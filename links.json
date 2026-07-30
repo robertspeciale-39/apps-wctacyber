@@ -17,6 +17,8 @@
     { "category": "Security+", "name": "The Malware Zoo", "url": "https://malware-zoo.vercel.app/", "description": "Exploration of Malware, their definitions and comparisons." },
     { "category": "Security+", "name": "The Phishing Inbox Simulator", "url": "https://phishing-simulator-ivory.vercel.app/", "description": "Exploration and examples of all of the iterations of Phishing." },
     { "category": "Security+", "name": "Threat Actor Profiler", "url": "https://threat-actor.vercel.app/", "description": "Exploration of all the diffrent types of Threat Actors." },
+    { "category": "Security+", "name": "Threat Actor Profiler", "url": "https://threat-actor.vercel.app/", "description": "Exploration of all the diffrent types of Threat Actors." },
+    { "category": "Security+", "name": "SIEM Triage Simulator", "url": "https://siem-triage-sim.vercel.app/", "description": "A SIEM Simulator where the user has to fight off and identify attacks in real time." },
     
     { "category": "Both", "name": "Attack Types", "url": "https://attack-type.vercel.app/", "description": "Identify and define the major categories of cyber attack." }
   ]
