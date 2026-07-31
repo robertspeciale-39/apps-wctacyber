@@ -20,7 +20,7 @@
     { "category": "Security+", "name": "The Phishing Inbox Simulator", "url": "https://phishing-simulator-ivory.vercel.app/", "description": "Exploration and examples of all of the iterations of Phishing." },
     { "category": "Security+", "name": "Threat Actor Profiler", "url": "https://threat-actor.vercel.app/", "description": "Exploration of all the diffrent types of Threat Actors." },
     { "category": "Security+", "name": "SIEM Triage Simulator", "url": "https://siem-triage-sim.vercel.app/", "description": "A SIEM Simulator where the user has to fight off and identify attacks in real time." },
-    { "category": "Security+", "name": "The CIA Triad", "url": "https://vercel.com/west-cta/cia-triad", "description": "Exploration of the CIA Triad and it's ancillary concepts." },
+    { "category": "Security+", "name": "The CIA Triad", "url": "https://cia-triad.vercel.app/", "description": "Exploration of the CIA Triad and it's ancillary concepts." },
     
     { "category": "Both", "name": "Attack Types", "url": "https://attack-type.vercel.app/", "description": "Identify and define the major categories of cyber attack." }
   ]
