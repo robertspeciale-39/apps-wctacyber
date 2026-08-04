@@ -396,6 +396,7 @@ table.cs-table { width: 100%; border-collapse: collapse; }
 ══════════════════════════════════════════════════════ */
 .boot-screen {
   position: absolute; top: 0; left: 0; right: 0; height: calc(100dvh - 68px);
+  z-index: 2;
   background: var(--bg); overflow-y: auto;
   display: flex; align-items: safe center; justify-content: center;
   padding: var(--sp-6) var(--sp-4);
@@ -443,8 +444,8 @@ table.cs-table { width: 100%; border-collapse: collapse; }
 /* ══════════════════════════════════════════════════════
    TOOL LIBRARY
 ══════════════════════════════════════════════════════ */
-.library { opacity: 0; transition: opacity .6s var(--ease-out); }
-.library.active { opacity: 1; }
+.library { position: relative; z-index: 1; opacity: 0; pointer-events: none; transition: opacity .6s var(--ease-out); }
+.library.active { opacity: 1; pointer-events: auto; }
 .library-intro { max-width: 640px; margin-bottom: var(--sp-6); }
 .library-title {
   font-family: var(--font-display); font-weight: 800; font-size: var(--fs-3xl);
