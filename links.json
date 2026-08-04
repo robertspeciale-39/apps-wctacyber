@@ -21,7 +21,7 @@
     { "category": "Security+", "name": "Threat Actor Profiler", "url": "https://threat-actor.vercel.app/", "description": "Exploration of all the diffrent types of Threat Actors." },
     { "category": "Security+", "name": "SIEM Triage Simulator", "url": "https://siem-triage-sim.vercel.app/", "description": "A SIEM Simulator where the user has to fight off and identify attacks in real time." },
     { "category": "Security+", "name": "The CIA Triad", "url": "https://cia-triad.vercel.app/", "description": "Exploration of the CIA Triad and it's ancillary concepts." },
-    { "category": "Security+", "name": "Attack Types", "url": "https://attack-type.vercel.app/", "description": "Identify and define the major categories of cyber attack." }
+    { "category": "Security+", "name": "Attack Types", "url": "https://attack-type.vercel.app/", "description": "Identify and define the major categories of cyber attack." },
 
     { "category": "A+/Tech+", "name": "Storage and RAID Lab", "url": "https://storage-and-raid-lab.vercel.app/", "description": "Exploration of how storage and the different RAID levels work and are configured" }
 
