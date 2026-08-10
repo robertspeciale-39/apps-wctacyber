@@ -24,7 +24,7 @@
     { "category": "Security+", "name": "Attack Types", "url": "https://attack-type.vercel.app/", "description": "Identify and define the major categories of cyber attack." },
 
     { "category": "A+/Tech+", "name": "Storage and RAID Lab", "url": "https://storage-and-raid-lab.vercel.app/", "description": "Exploration of how storage and the different RAID levels work and are configured" }
-
+    { "category": "A+/Tech+", "name": "Printer Triage Bay", "url": "https://printer-blond.vercel.app/", "description": "Exploration of how printer work and are supported in the business environment" }
     
   ]
 }
