@@ -25,6 +25,7 @@
 
     { "category": "A+/Tech+", "name": "Storage and RAID Lab", "url": "https://storage-and-raid-lab.vercel.app/", "description": "Exploration of how storage and the different RAID levels work and are configured." },
     { "category": "A+/Tech+", "name": "Printer Triage Bay", "url": "https://printer-blond.vercel.app/", "description": "Exploration of how printers work and are supported in the business environment." },
+    { "category": "A+/Tech+", "name": "Windows Tool Picker", "url": "https://windows-tool-picker.vercel.app/", "description": "Tool to help users pick the correct tool to use in Windows." },
     { "category": "A+/Tech+", "name": "POST & Boot Failure Diagnostician", "url": "https://post-and-boot.vercel.app/", "description": "Diagnose a variety of POST and boot issues commonly found on computing devices." }
   ]
 }
