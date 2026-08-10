@@ -1,6 +1,6 @@
 {
-  "_comment": "WCTA Cyber tool library data. Edit THIS FILE to add/remove tools or categories - no code changes needed. Each tool needs: category, name, url, description. Categories repeat freely; the page groups them automatically, assigns each a colour, and builds the filter buttons, boot-log mount lines, headings, counts and search index from whatever it finds here. Category display order follows the order tools first appear below.",
-  "updated": "2026-07-29",
+  "_comment": "WCTA Cyber tool library data. Edit THIS FILE to add/remove tools or categories - no code changes needed. Each tool needs: category, name, url, description. Categories repeat freely; the page groups them automatically, assigns each a colour, and builds the filter buttons, boot-log mount lines, headings, counts and search index from whatever it finds here. Category display order follows the order tools first appear below. NOTE: JSON does not allow a trailing comma after the last item in the tools array - the last entry must end with } and no comma.",
+  "updated": "2026-08-09",
   "tools": [
     { "category": "Network+", "name": "OSI Model Explorer", "url": "https://osi-model-explorer.vercel.app/", "description": "Click through all seven layers - protocols, devices, and PDUs at each one." },
     { "category": "Network+", "name": "Ports & Protocols Explorer", "url": "https://ports-protocols-explorer.vercel.app/", "description": "Look up well-known ports and the protocols that ride on them." },
@@ -10,21 +10,21 @@
     { "category": "Network+", "name": "Wireless Channel Simulator", "url": "https://wireless-channel-simulator.vercel.app/", "description": "See how 2.4 and 5 GHz channels overlap and interfere." },
     { "category": "Network+", "name": "DNS Resolver", "url": "https://dns-resolver-six.vercel.app/", "description": "Follow a DNS query from resolver to root to authoritative answer." },
     { "category": "Network+", "name": "Command Line Sandbox", "url": "https://cli-sandbox.vercel.app/", "description": "Practice and quiz on network CLI commands - Linux and Windows." },
-    { "category": "Network+", "name": "Packet Flow Tracer", "url": "https://packet-flow-theta.vercel.app/", "description": "Network simulation on how networks transfer data and what happens when they break" },
-    { "category": "Network+", "name": "Network Plus Practice Exam", "url": "https://network-plus-sigma.vercel.app/", "description": "Network Plus 150 question practice exam" },
-    
+    { "category": "Network+", "name": "Packet Flow Tracer", "url": "https://packet-flow-theta.vercel.app/", "description": "Network simulation on how networks transfer data and what happens when they break." },
+    { "category": "Network+", "name": "Network Plus Practice Exam", "url": "https://network-plus-sigma.vercel.app/", "description": "Network Plus 150 question practice exam." },
+
     { "category": "Security+", "name": "Firewall ACL Builder", "url": "https://firewall-acl-builder.vercel.app/", "description": "Write and order firewall access control rules, then test traffic against them." },
     { "category": "Security+", "name": "Encryption Explorer", "url": "https://encryption-explorer.vercel.app/", "description": "Compare symmetric, asymmetric, and hashing with worked examples." },
     { "category": "Security+", "name": "Security+ Practice Exam", "url": "https://sec-plus-beryl.vercel.app/", "description": "Timed practice questions across all five SY0-701 domains." },
-    { "category": "Security+", "name": "The Malware Zoo", "url": "https://malware-zoo.vercel.app/", "description": "Exploration of Malware, their definitions and comparisons." },
-    { "category": "Security+", "name": "The Phishing Inbox Simulator", "url": "https://phishing-simulator-ivory.vercel.app/", "description": "Exploration and examples of all of the iterations of Phishing." },
-    { "category": "Security+", "name": "Threat Actor Profiler", "url": "https://threat-actor.vercel.app/", "description": "Exploration of all the diffrent types of Threat Actors." },
-    { "category": "Security+", "name": "SIEM Triage Simulator", "url": "https://siem-triage-sim.vercel.app/", "description": "A SIEM Simulator where the user has to fight off and identify attacks in real time." },
-    { "category": "Security+", "name": "The CIA Triad", "url": "https://cia-triad.vercel.app/", "description": "Exploration of the CIA Triad and it's ancillary concepts." },
+    { "category": "Security+", "name": "The Malware Zoo", "url": "https://malware-zoo.vercel.app/", "description": "Exploration of malware types, their definitions and comparisons." },
+    { "category": "Security+", "name": "The Phishing Inbox Simulator", "url": "https://phishing-simulator-ivory.vercel.app/", "description": "Exploration and examples of all of the iterations of phishing." },
+    { "category": "Security+", "name": "Threat Actor Profiler", "url": "https://threat-actor.vercel.app/", "description": "Exploration of all the different types of threat actors." },
+    { "category": "Security+", "name": "SIEM Triage Simulator", "url": "https://siem-triage-sim.vercel.app/", "description": "A SIEM simulator where the user has to identify and fight off attacks in real time." },
+    { "category": "Security+", "name": "The CIA Triad", "url": "https://cia-triad.vercel.app/", "description": "Exploration of the CIA Triad and its ancillary concepts." },
     { "category": "Security+", "name": "Attack Types", "url": "https://attack-type.vercel.app/", "description": "Identify and define the major categories of cyber attack." },
 
-    { "category": "A+/Tech+", "name": "Storage and RAID Lab", "url": "https://storage-and-raid-lab.vercel.app/", "description": "Exploration of how storage and the different RAID levels work and are configured" },
-    { "category": "A+/Tech+", "name": "Printer Triage Bay", "url": "https://printer-blond.vercel.app/", "description": "Exploration of how printer work and are supported in the business environment" },
-    { "category": "A+/Tech+", "name": "POST & Boot Failure Diagnostician", "url": "https://post-and-boot.vercel.app/", "description": "Diagnose a variety of POST and boot issues commonly found on computing devices" },
+    { "category": "A+/Tech+", "name": "Storage and RAID Lab", "url": "https://storage-and-raid-lab.vercel.app/", "description": "Exploration of how storage and the different RAID levels work and are configured." },
+    { "category": "A+/Tech+", "name": "Printer Triage Bay", "url": "https://printer-blond.vercel.app/", "description": "Exploration of how printers work and are supported in the business environment." },
+    { "category": "A+/Tech+", "name": "POST & Boot Failure Diagnostician", "url": "https://post-and-boot.vercel.app/", "description": "Diagnose a variety of POST and boot issues commonly found on computing devices." }
   ]
 }
