@@ -28,5 +28,8 @@
     { "category": "A+/Tech+", "name": "Command Line Picker", "url": "https://command-picker.vercel.app/", "description": "Explore common CLI commands and see the differences between Windows, Mac and Linux." },
     { "category": "A+/Tech+", "name": "Windows Tool Picker", "url": "https://windows-tool-picker.vercel.app/", "description": "Tool to help users pick the correct tool to use in Windows." },
     { "category": "A+/Tech+", "name": "POST & Boot Failure Diagnostician", "url": "https://post-and-boot.vercel.app/", "description": "Diagnose a variety of POST and boot issues commonly found on computing devices." }
+
+    { "category": "AP Cyber", "name": "Social Engineering", "url": "https://social-engineering-six.vercel.app/", "description": "All of the concepts related to the world of social engineering." },
+    
   ]
 }
