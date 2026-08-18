@@ -10,6 +10,7 @@
     {"category": "Network+", "name": "Wireless Channel Simulator", "url": "https://wireless-channel-simulator.vercel.app/", "description": "See how 2.4 and 5 GHz channels overlap and interfere."},
     {"category": "Network+", "name": "DNS Resolver", "url": "https://dns-resolver-six.vercel.app/", "description": "Follow a DNS query from resolver to root to authoritative answer."},
     {"category": "Network+", "name": "Command Line Sandbox", "url": "https://cli-sandbox.vercel.app/", "description": "Practice and quiz on network CLI commands - Linux and Windows."},
+    {"category": "Network+", "name": "Cables and Connectors", "url": "https://connectors-nine.vercel.app/", "description": "Explore all of the cable types, connectors and all of their standrds"},
     {"category": "Network+", "name": "Packet Flow Tracer", "url": "https://packet-flow-theta.vercel.app/", "description": "Network simulation on how networks transfer data and what happens when they break."},
     {"category": "Network+", "name": "Network Plus Practice Exam", "url": "https://network-plus-sigma.vercel.app/", "description": "Network Plus 150 question practice exam."},
 
