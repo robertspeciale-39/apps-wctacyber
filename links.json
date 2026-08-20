@@ -31,6 +31,7 @@
     {"category": "A+/Tech+", "name": "Windows Tool Picker", "url": "https://windows-tool-picker.vercel.app/", "description": "Tool to help users pick the correct tool to use in Windows."},
     {"category": "A+/Tech+", "name": "POST & Boot Failure Diagnostician", "url": "https://post-and-boot.vercel.app/", "description": "Diagnose a variety of POST and boot issues commonly found on computing devices."},
 
-    {"category": "AP Cyber", "name": "Social Engineering", "url": "https://social-engineering-six.vercel.app/", "description": "All of the concepts related to the world of social engineering."}
+    {"category": "AP Cyber", "name": "Social Engineering", "url": "https://social-engineering-six.vercel.app/", "description": "All of the concepts related to the world of social engineering."},
+    {"category": "AP Cyber", "name": "Password Strength and Attck Lab", "url": "https://password-five-red.vercel.app/", "description": "Explore password best practices, complexity and how to mitigate password attacks."}
   ]
 }
