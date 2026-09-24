@@ -1,6 +1,6 @@
 {
   "_comment": "WCTA Cyber tool library data. Edit THIS FILE to add/remove tools or categories - no code changes needed. Each tool needs: category, name, url, description. Categories repeat freely; the page groups them automatically, assigns each a colour, and builds the filter buttons, boot-log mount lines, headings, counts and search index from whatever it finds here. Category display order follows the order tools first appear below. NOTE: JSON does not allow a trailing comma after the last item in the tools array - the last entry must end with } and no comma.",
-  "updated": "2026-08-16",
+  "updated": "2026-09-23",
   "tools": [
     {"category": "Network+", "name": "OSI Model Explorer", "url": "https://osi-model-explorer.vercel.app/", "description": "Click through all seven layers - protocols, devices, and PDUs at each one."},
     {"category": "Network+", "name": "Ports & Protocols Explorer", "url": "https://ports-protocols-explorer.vercel.app/", "description": "Look up well-known ports and the protocols that ride on them."},
@@ -33,6 +33,7 @@
     {"category": "A+/Tech+", "name": "POST & Boot Failure Diagnostician", "url": "https://post-and-boot.vercel.app/", "description": "Diagnose a variety of POST and boot issues commonly found on computing devices."},
 
     {"category": "AP Cyber", "name": "Social Engineering", "url": "https://social-engineering-six.vercel.app/", "description": "All of the concepts related to the world of social engineering."},
-    {"category": "AP Cyber", "name": "Password Strength and Attck Lab", "url": "https://password-five-red.vercel.app/", "description": "Explore password best practices, complexity and how to mitigate password attacks."}
+    {"category": "AP Cyber", "name": "Password Strength and Attck Lab", "url": "https://password-five-red.vercel.app/", "description": "Explore password best practices, complexity and how to mitigate password attacks."},
+    {"category": "AP Cyber", "name": "Eyes on the Perimeter", "url": "https://eyes-on-the-perimeter.vercel.app/", "description": "Place cameras, sensors, guards, and door controls on 8 floorplans, then replay the break-in."}
   ]
 }
