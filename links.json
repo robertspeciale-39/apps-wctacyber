@@ -34,6 +34,7 @@
 
     {"category": "AP Cyber", "name": "Social Engineering", "url": "https://social-engineering-six.vercel.app/", "description": "All of the concepts related to the world of social engineering."},
     {"category": "AP Cyber", "name": "Password Strength and Attck Lab", "url": "https://password-five-red.vercel.app/", "description": "Explore password best practices, complexity and how to mitigate password attacks."},
-    {"category": "AP Cyber", "name": "Eyes on the Perimeter", "url": "https://eyes-on-the-perimeter.vercel.app/", "description": "Place cameras, sensors, guards, and door controls on 8 floorplans, then replay the break-in."}
+    {"category": "AP Cyber", "name": "Eyes on the Perimeter", "url": "https://eyes-on-the-perimeter.vercel.app/", "description": "Place cameras, sensors, guards, and door controls on 8 floorplans, then replay the break-in."},
+    {"category": "AP Cyber", "name": "Network Attack Identifier", "url": "https://network-attack-identifier.vercel.app/", "description": "Study different types of network attacks by identifying which one was used in each scenario."}
   ]
 }
