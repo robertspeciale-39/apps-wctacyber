@@ -13,6 +13,7 @@
     {"category": "Network+", "name": "Flippy Do!", "url": "https://flippy-do.vercel.app/", "description": "Calculator for converting decimal to binary to hex and vice versa."},
     {"category": "Network+", "name": "Cables and Connectors", "url": "https://connectors-nine.vercel.app/", "description": "Explore all of the cable types, connectors and all of their standrds"},
     {"category": "Network+", "name": "Packet Flow Tracer", "url": "https://packet-flow-theta.vercel.app/", "description": "Network simulation on how networks transfer data and what happens when they break."},
+    {"category": "Network+", "name": "Network Documentation Lab", "url": "https://network-documentation-lab.vercel.app/", "description": "Network documentation, it's many forms and a sandbox to play with them."},
     {"category": "Network+", "name": "Network Plus Practice Exam", "url": "https://network-plus-sigma.vercel.app/", "description": "Network Plus 150 question practice exam."},
 
     {"category": "Security+", "name": "Firewall ACL Builder", "url": "https://firewall-acl-builder.vercel.app/", "description": "Write and order firewall access control rules, then test traffic against them."},
