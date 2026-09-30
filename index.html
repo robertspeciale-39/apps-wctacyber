@@ -569,6 +569,20 @@ table.cs-table { width: 100%; border-collapse: collapse; }
   .panel, .stat-card, .tool-card { border-color: #ccc; background: #fff; break-inside: avoid; }
   .panel-title, .stat-val, .row-title, .tool-card-title, .library-title, .track-name { color: #000; }
 }
+
+/* ── Background music toggle ── */
+.bgm-btn {
+  position: fixed; right: var(--sp-4); bottom: var(--sp-4); z-index: var(--z-toast);
+  display: inline-flex; align-items: center; gap: var(--sp-2);
+  padding: var(--sp-2) var(--sp-4); min-height: 44px;
+  font-family: var(--font-mono); font-size: var(--fs-xs); letter-spacing: .08em;
+  color: var(--primary); background: color-mix(in srgb, var(--bg) 90%, transparent);
+  border: 1px solid var(--primary); border-radius: var(--r-pill); cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: background var(--dur) var(--ease-out), color var(--dur) var(--ease-out);
+}
+.bgm-btn:hover, .bgm-btn:focus-visible { background: var(--primary); color: var(--bg); outline: none; }
+.bgm-btn[aria-pressed="false"] { color: var(--text-dim); border-color: var(--text-dim); }
 </style>
 </head>
 <body class="matrix">
@@ -1119,6 +1133,40 @@ document.getElementById('toolSearch').addEventListener('input', applyFilters);
   runBoot();
 })();
 
+</script>
+<audio id="bgm" src="audio/eyes-on-the-perimeter.mp3" loop preload="auto"></audio>
+<button id="bgmBtn" class="bgm-btn" type="button" aria-pressed="false" aria-label="Toggle background music">♪ MUSIC: OFF</button>
+<script>
+(function () {
+  var a = document.getElementById('bgm'), b = document.getElementById('bgmBtn');
+  var muted = false, KEY = 'wcta-bgm-muted';
+  try { muted = localStorage.getItem(KEY) === '1'; } catch (e) {}
+  a.volume = 0.35;
+  function ui() {
+    var on = !a.paused;
+    b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    b.textContent = on ? '♪ MUSIC: ON' : '♪ MUSIC: OFF';
+  }
+  function play() { var p = a.play(); if (p && p.then) p.then(ui, ui); }
+  function firstGesture() {
+    if (!muted) play();
+    ['pointerdown', 'keydown', 'touchstart'].forEach(function (ev) { document.removeEventListener(ev, firstGesture, true); });
+  }
+  b.addEventListener('click', function (e) {
+    e.stopPropagation();
+    if (a.paused) { muted = false; play(); } else { muted = true; a.pause(); }
+    try { localStorage.setItem(KEY, muted ? '1' : '0'); } catch (err) {}
+    ui();
+  });
+  a.addEventListener('play', ui); a.addEventListener('pause', ui);
+  // Browsers block autoplay with sound, so try immediately and fall back to first interaction.
+  if (!muted) { var p = a.play(); if (p && p.catch) p.catch(function () {}); }
+  ['pointerdown', 'keydown', 'touchstart'].forEach(function (ev) { document.addEventListener(ev, function h(e) {
+    if (e.target === b || b.contains(e.target)) return;
+    firstGesture();
+  }, true); });
+  ui();
+})();
 </script>
 </body>
 </html>
