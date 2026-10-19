@@ -24,20 +24,16 @@
     {"category": "Security+", "name": "Threat Actor Profiler", "url": "https://threat-actor.vercel.app/", "description": "Exploration of all the different types of threat actors."},
     {"category": "Security+", "name": "SIEM Triage Simulator", "url": "https://siem-triage-sim.vercel.app/", "description": "A SIEM simulator where the user has to identify and fight off attacks in real time."},
     {"category": "Security+", "name": "The CIA Triad", "url": "https://cia-triad.vercel.app/", "description": "Exploration of the CIA Triad and its ancillary concepts."},
-    {"category": "Security+", "name": "The Sec Plus Connections Game", "url": "https://secplusconnections.vercel.app/", "description": "Can YOU make all of the connections?"},
     {"category": "Security+", "name": "Attack Types", "url": "https://attack-type.vercel.app/", "description": "Identify and define the major categories of cyber attack."},
 
     {"category": "A+/Tech+", "name": "Storage and RAID Lab", "url": "https://storage-and-raid-lab.vercel.app/", "description": "Exploration of how storage and the different RAID levels work and are configured."},
     {"category": "A+/Tech+", "name": "Printer Triage Bay", "url": "https://printer-blond.vercel.app/", "description": "Exploration of how printers work and are supported in the business environment."},
     {"category": "A+/Tech+", "name": "Command Line Picker", "url": "https://command-picker.vercel.app/", "description": "Explore common CLI commands and see the differences between Windows, Mac and Linux."},
-    {"category": "A+/Tech+", "name": "Rootfall: A Linux Sandbox Game", "url": "https://rootfall.vercel.app/", "description": "Can you get through evey level and prove your Linux dominance?"},
     {"category": "A+/Tech+", "name": "Windows Tool Picker", "url": "https://windows-tool-picker.vercel.app/", "description": "Tool to help users pick the correct tool to use in Windows."},
     {"category": "A+/Tech+", "name": "POST & Boot Failure Diagnostician", "url": "https://post-and-boot.vercel.app/", "description": "Diagnose a variety of POST and boot issues commonly found on computing devices."},
 
     {"category": "AP Cyber", "name": "Social Engineering", "url": "https://social-engineering-six.vercel.app/", "description": "All of the concepts related to the world of social engineering."},
     {"category": "AP Cyber", "name": "Password Strength and Attck Lab", "url": "https://password-five-red.vercel.app/", "description": "Explore password best practices, complexity and how to mitigate password attacks."},
-    {"category": "AP Cyber", "name": "AP Cyber Crossword Puzzle", "url": "https://crossword-five-tau.vercel.app/", "description": "How fast can you solve a crossword?"},
-    {"category": "AP Cyber", "name": "AP Cyber Connections", "url": "https://linkup-jvfo.vercel.app/", "description": "Can you make the connections?"},
     {"category": "AP Cyber", "name": "Eyes on the Perimeter", "url": "https://eyes-on-the-perimeter.vercel.app/", "description": "Place cameras, sensors, guards, and door controls on 8 floorplans, then replay the break-in."},
     {"category": "AP Cyber", "name": "Network Attack Identifier", "url": "https://network-attack-identifier.vercel.app/", "description": "Study different types of network attacks by identifying which one was used in each scenario."}
   ]
